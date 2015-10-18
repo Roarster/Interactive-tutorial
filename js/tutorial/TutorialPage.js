@@ -1,6 +1,6 @@
-tutorial.TutorialPage = function () {
+tutorial.TutorialPage = function (data) {
   var self = this;
 
   // observables
-  self.name = ko.observable('test');
+  self.name = ko.observable(data ? data.name : '');
 };

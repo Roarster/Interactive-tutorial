@@ -25,7 +25,12 @@
   <script src="js/tutorial/TutorialPage.js"></script>
 
   <script type="text/javascript">
-  var viewModel = new tutorial.TutorialViewModel();
+  var data = {
+    pages: [{name: 'Page1'}, {name: 'Page2'}, {name: 'Page3'}]
+  };
+  var viewModel = new tutorial.TutorialViewModel({
+    data: data
+  });
 
   ko.applyBindings(viewModel, $('#id-view')[0]);
   </script>
