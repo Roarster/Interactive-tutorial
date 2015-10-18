@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Interactive Javascript Tutorial</title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Interactive Javascript Tutorial</title>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+</head>
+<body>
+  <div id="ko-view">
+    <select data-bind="options: pages, optionsText: 'name', value: currentPage"></select>
+  </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-  </body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+  <script src="js/knockout/knockout-3.3.0.js"></script>
+  <script src="js/tutorial/namespace.js"></script>
+  <script src="js/tutorial/TutorialViewModel.js"></script>
+  <script src="js/tutorial/TutorialPage.js"></script>
+
+  <script type="text/javascript">
+  var viewModel = new tutorial.TutorialViewModel();
+
+  ko.applyBindings(viewModel, $('#id-view')[0]);
+  </script>
+</body>
 </html>
