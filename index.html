@@ -13,6 +13,12 @@
 <body>
   <div id="ko-view">
     <select data-bind="options: pages, optionsText: 'name', value: currentPage"></select>
+    <div data-bind="with: currentPage">
+      <div data-bind="text: name"></div>
+      <div data-bind="text: instructions"></div>
+      <div data-bind="text: markUp"></div>
+      <div data-bind="text: script"></div>
+    </div>
   </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -26,7 +32,10 @@
 
   <script type="text/javascript">
   var data = {
-    pages: [{name: 'Page1'}, {name: 'Page2'}, {name: 'Page3'}]
+    pages: [
+      {name: 'Page1', instructions: 'instructions 1', markUp: 'markUp 1', script: 'script 1'},
+      {name: 'Page2', instructions: 'instructions 2', markUp: 'markUp 2', script: 'script 2'},
+      {name: 'Page3', instructions: 'instructions 3', markUp: 'markUp 3', script: 'script 3'}]
   };
   var viewModel = new tutorial.TutorialViewModel({
     data: data
