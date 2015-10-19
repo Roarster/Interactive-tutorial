@@ -15,11 +15,11 @@
     <select data-bind="options: pages, optionsText: 'name', value: currentPage"></select>
     <div data-bind="with: currentPage">
       <div data-bind="text: name"></div>
-      <div data-bind="foreach: instructions">
-        <div data-bind="text: $data"></div>
-      </div>
-      <div data-bind="text: markUp"></div>
-      <div data-bind="text: script"></div>
+      <button data-bind="click: moveToPreviousInstruction, enable: canMoveToPreviousInstruction">Previous</button>
+      <div data-bind="text: selectedInstruction"></div>
+      <button data-bind="click: moveToNextInstruction, enable: canMoveToNextInstruction">Next</button>
+      <textarea data-bind="value: markUp"></textarea>
+      <textarea data-bind="value: script"></textarea>
     </div>
   </div>
 
