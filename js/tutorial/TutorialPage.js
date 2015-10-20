@@ -7,7 +7,6 @@ tutorial.TutorialPage = function (data) {
   self.markUp = ko.observable(data ? data.markUp : '');
   self.script = ko.observable(data ? data.script : '');
   var instructionIndex = ko.observable(0);
-  self.output = ko.observable();
 
   // computeds
   self.canMoveToNextInstruction = ko.computed(function () {
@@ -38,9 +37,5 @@ tutorial.TutorialPage = function (data) {
 
   self.moveToNextInstruction = function () {
     instructionIndex(Math.min(self.instructions().length - 1, instructionIndex() + 1));
-  };
-
-  self.runCode = function () {
-
   };
 };

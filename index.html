@@ -21,8 +21,8 @@
         <button class="btn btn-default" type="button" data-bind="click: moveToNextInstruction, enable: canMoveToNextInstruction">Next</button>
         <textarea class="form-control" data-bind="value: markUp"></textarea>
         <textarea class="form-control" data-bind="value: script"></textarea>
-        <div data-bind="html: output"></div>
-        <button data-bind="click: runCode">Run</button>
+        <button class="btn btn-default"  data-bind="click: $parent.runCode">Run</button>
+        <div data-bind="html: $parent.output"></div>
       </div>
     </div>
   </div>

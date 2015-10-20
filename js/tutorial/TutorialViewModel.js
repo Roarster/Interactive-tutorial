@@ -6,4 +6,15 @@ tutorial.TutorialViewModel = function (options) {
     return new tutorial.TutorialPage(page);
   }));
   self.currentPage = ko.observable();
+  self.output = ko.observable();
+
+  // functions
+  self.runCode = function () {
+    var markUp = self.currentPage().markUp();
+    var script = self.currentPage().script();
+
+    var result = "dummy result";
+
+    self.output(result);
+  };
 };
