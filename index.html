@@ -19,8 +19,8 @@
         <button class="btn btn-default" type="button" data-bind="click: moveToPreviousInstruction, enable: canMoveToPreviousInstruction">Previous</button>
         <div data-bind="text: selectedInstruction"></div>
         <button class="btn btn-default" type="button" data-bind="click: moveToNextInstruction, enable: canMoveToNextInstruction">Next</button>
-        <textarea class="form-control" data-bind="value: markUp"></textarea>
-        <textarea class="form-control" data-bind="value: script"></textarea>
+        <div class="form-control" data-bind="ace: markUp, aceOptions: {mode: 'ace/mode/html'}"></div>
+        <div class="form-control" data-bind="ace: script, aceOptions: {mode: 'ace/mode/javascript'}"></div>
         <button class="btn btn-default"  data-bind="click: $parent.runCode">Run</button>
         <div data-bind="html: $parent.output"></div>
       </div>

@@ -1,4 +1,4 @@
-define(['knockout', 'app/TutorialPage'], function(ko, TutorialPage) {
+define(['knockout', 'app/TutorialPage', 'bindings/ace'], function(ko, TutorialPage) {
   return function TutorialViewModel(options) {
     var self = this;
 
