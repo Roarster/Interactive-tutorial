@@ -10,6 +10,12 @@ define(['knockout', 'ace/ace'], function(ko, ace){
       if (options.mode) {
         editor.getSession().setMode(options.mode);
       }
+
+      // register event handlers
+      editor.getSession().on('change', function(e) {
+        var value = valueAccessor();
+        value(editor.getValue());
+      });
     },
     update: function(element, valueAccessor) {
 
