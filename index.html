@@ -26,28 +26,6 @@
       </div>
     </div>
   </div>
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap/bootstrap.min.js"></script>
-  <script src="js/knockout/knockout-3.3.0.js"></script>
-  <script src="js/tutorial/namespace.js"></script>
-  <script src="js/tutorial/TutorialViewModel.js"></script>
-  <script src="js/tutorial/TutorialPage.js"></script>
-
-  <script type="text/javascript">
-  var data = {
-    pages: [
-      {name: 'Page1', instructions: ['instructions 1.1', 'instructions 1.2'], markUp: 'markUp 1', script: 'script 1'},
-      {name: 'Page2', instructions: ['instructions 2'], markUp: 'markUp 2', script: 'script 2'},
-      {name: 'Page3', instructions: ['instructions 3'], markUp: 'markUp 3', script: 'script 3'}]
-  };
-  var viewModel = new tutorial.TutorialViewModel({
-    data: data
-  });
-
-  ko.applyBindings(viewModel, $('#id-view')[0]);
-  </script>
+  <script data-main="js/app" src="js/require.js"></script>
 </body>
 </html>
