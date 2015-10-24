@@ -16,13 +16,19 @@
       <select class="form-control" data-bind="options: pages, optionsText: 'name', value: currentPage"></select>
       <div data-bind="with: currentPage">
         <h1 data-bind="text: name"></h1>
-        <button class="btn btn-default" type="button" data-bind="click: moveToPreviousInstruction, enable: canMoveToPreviousInstruction">Previous</button>
-        <div data-bind="text: selectedInstruction"></div>
-        <button class="btn btn-default" type="button" data-bind="click: moveToNextInstruction, enable: canMoveToNextInstruction">Next</button>
-        <div class="form-control" data-bind="ace: markUp, aceOptions: {mode: 'ace/mode/html'}"></div>
-        <div class="form-control" data-bind="ace: script, aceOptions: {mode: 'ace/mode/javascript'}"></div>
-        <button class="btn btn-default"  data-bind="click: $parent.runCode">Run</button>
-        <div data-bind="html: $parent.output"></div>
+        <div class="row">
+          <div class="col-md-6">
+              <button class="btn btn-default" type="button" data-bind="click: moveToPreviousInstruction, enable: canMoveToPreviousInstruction">Previous</button>
+              <span data-bind="text: selectedInstruction"></span>
+              <button class="btn btn-default" type="button" data-bind="click: moveToNextInstruction, enable: canMoveToNextInstruction">Next</button>
+              <button class="btn btn-default"  data-bind="click: $parent.runCode">Run</button>
+              <div data-bind="html: $parent.output"></div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-control" data-bind="ace: markUp, aceOptions: {mode: 'ace/mode/html'}"></div>
+            <div class="form-control" data-bind="ace: script, aceOptions: {mode: 'ace/mode/javascript'}"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
